@@ -32,4 +32,11 @@ public class EmployeeController {
         return "Welcome to Edit Page";
     }
 
+
+    @GetMapping("/viewall")
+    public String ViewallPage()
+    {
+        return "Welcome to View all Page";
+    }
+
 }

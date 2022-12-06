@@ -6,6 +6,8 @@ import com.example.employeedb_backend.model.Employees;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class EmployeeController {
     @Autowired
@@ -24,6 +26,11 @@ public class EmployeeController {
         return "Employee Added Successfully";
     }
 
+    @CrossOrigin(origins = "*")
+    @GetMapping("/viewall")
+    public List<Employees> ViewAll(){
+        return (List<Employees>) dao.findAll();
+    }
 
 
 }
